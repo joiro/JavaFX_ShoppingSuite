@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AnalyticsController">
+   <children>
+      <Button layoutX="40.0" layoutY="80.0" mnemonicParsing="false" onAction="#toDashboard" text="To Dashboard" />
+      <Region id="region" layoutX="6.0" layoutY="6.0" prefHeight="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label id="title" layoutX="40.0" prefHeight="60.0" prefWidth="100.0" text="Analytics" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="0.0" />
+      <ScatterChart fx:id="scatterChart" layoutX="135.0" layoutY="185.0">
+        <xAxis>
+          <CategoryAxis fx:id="catAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="numAxis" side="LEFT" />
+        </yAxis>
+      </ScatterChart>
+      <Button fx:id="buttonNew" layoutX="40.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleWizard" text="new" />
+   </children>
+</AnchorPane>

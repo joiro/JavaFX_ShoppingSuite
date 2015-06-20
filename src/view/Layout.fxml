@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LayoutController">
+   <children>
+      <Button layoutX="40.0" layoutY="80.0" mnemonicParsing="false" onAction="#toDashboard" text="To Dashboard" />
+      <Region id="region" layoutY="6.0" prefHeight="60.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label id="title" layoutX="40.0" layoutY="22.0" prefHeight="60.0" text="Layout" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>

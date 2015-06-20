@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+   <children>
+      <Region id="region" layoutX="114.0" layoutY="114.0" prefHeight="80.0" prefWidth="200.0" stylesheets="@application.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label layoutX="134.0" layoutY="52.0" text="Dashboard" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Line endX="1160.0" layoutX="20.0" layoutY="500.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="102.0" text="Sales Overview" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" />
+      <VBox layoutX="80.0" layoutY="180.0" AnchorPane.leftAnchor="50.0">
+         <children>
+            <LineChart fx:id="lineChart" layoutX="80.0" layoutY="180.0" prefHeight="250.0" prefWidth="400.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <HBox alignment="CENTER" layoutX="150.0" layoutY="421.0" spacing="20.0">
+               <children>
+                  <RadioButton fx:id="week" layoutX="150.0" layoutY="421.0" mnemonicParsing="false" text="week" />
+                  <RadioButton fx:id="month" layoutX="217.0" layoutY="421.0" mnemonicParsing="false" text="month" />
+                  <RadioButton fx:id="year" layoutX="288.0" layoutY="421.0" mnemonicParsing="false" text="year" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" spacing="40.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <VBox alignment="CENTER" onMouseClicked="#openProductManager" prefWidth="122.0">
+               <children>
+                  <ImageView fitHeight="50.0" onMouseClicked="#openProductManager" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../shoppingSuite/resources/images/icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Product Manager" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" onMouseClicked="#openCustomerManager" prefWidth="122.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../../../shoppingSuite/resources/images/icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Customer Manager" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" onMouseClicked="#openAnalytics" prefWidth="122.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../../../shoppingSuite/resources/images/icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Analytics" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" onMouseClicked="#openLayout" prefWidth="122.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../../../shoppingSuite/resources/images/icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" text="Settings" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox layoutX="550.0" layoutY="156.0" prefHeight="300.0" spacing="5.0" AnchorPane.rightAnchor="40.0">
+         <children>
+            <Label layoutX="659.0" layoutY="156.0" text="Top 10 Products" />
+            <ListView fx:id="listView" layoutX="642.0" layoutY="180.0" />
+         </children>
+      </VBox>
+      <PieChart fx:id="pieChart" layoutX="444.0" layoutY="133.0" prefHeight="348.0" prefWidth="436.0" />
+      <Button fx:id="update" layoutX="1098.0" layoutY="97.0" mnemonicParsing="false" onAction="#handleUpdate" text="Update" />
+   </children>
+</AnchorPane>

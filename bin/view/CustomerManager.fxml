@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerManagerController">
+   <children>
+      <Button layoutX="40.0" layoutY="70.0" mnemonicParsing="false" onAction="#toDashboard" text="To DashBoard" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="70.0" />
+      <Region id="region" layoutY="6.0" prefHeight="60.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label id="title" layoutX="40.0" layoutY="22.0" prefHeight="60.0" text="Customer Manager" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="0.0" />
+      <VBox layoutX="40.0" layoutY="125.0" spacing="10.0" AnchorPane.bottomAnchor="50.0" AnchorPane.topAnchor="114.0">
+         <children>
+            <TextField fx:id="searchCustomers" layoutX="63.0" layoutY="125.0" prefHeight="26.0" prefWidth="213.0" promptText="search customers" AnchorPane.leftAnchor="40.0" />
+            <TableView fx:id="customerTable" layoutX="40.0" layoutY="140.0" prefHeight="500.0" prefWidth="300.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="40.0">
+              <columns>
+                <TableColumn fx:id="cIDColumn" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="cNameColumn" prefWidth="250.0" text="Customer Name" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <GridPane layoutX="400.0" layoutY="125.0" prefHeight="200.0" prefWidth="750.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.6666259765625" minWidth="10.0" prefWidth="181.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="395.6666259765625" minWidth="10.0" prefWidth="222.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.6666259765625" minWidth="10.0" prefWidth="84.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.6666259765625" minWidth="10.0" prefWidth="215.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="10.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Customer Details">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label text="First Name" GridPane.rowIndex="3" />
+            <Label text="Last Name" GridPane.rowIndex="4" />
+            <Label text="Email Address" GridPane.rowIndex="5" />
+            <Label text="Customer since:" GridPane.rowIndex="6" />
+            <Label text="Personal Details" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Address" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Street" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="City" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label fx:id="cFirstName" text="firstName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="cLastName" text="lastName" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="cEmail" text="email" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="cCustomerSince" text="customerSince" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="cStreet" text="street" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label fx:id="cCity" text="city" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label text="ID" GridPane.rowIndex="2" />
+            <Label fx:id="cID" text="id" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Country" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label fx:id="cCountry" text="country" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label text="Postcode" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label fx:id="cPostcode" text="postcode" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <VBox layoutX="400.0" layoutY="382.0" spacing="10.0" AnchorPane.bottomAnchor="50.0" AnchorPane.topAnchor="390.0">
+         <children>
+            <Label layoutX="406.0" layoutY="382.0" text="Recent Orders:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ListView fx:id="recentOrders" layoutX="400.0" layoutY="407.0" prefHeight="230.0" prefWidth="350.0" AnchorPane.bottomAnchor="60.0" />
+         </children>
+      </VBox>
+      <Button fx:id="deleteCustomer" layoutX="400.0" layoutY="337.0" mnemonicParsing="false" onAction="#deleteCustomer" text="Delete Customer" />
+   </children>
+</AnchorPane>

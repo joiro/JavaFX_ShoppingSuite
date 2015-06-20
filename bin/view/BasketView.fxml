@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="400.0" prefWidth="800.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BasketController">
+   <children>
+      <Region id="region" layoutX="145.0" layoutY="-62.0" prefHeight="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label id="titleSmall" layoutX="19.0" layoutY="13.0" prefHeight="40.0" stylesheets="@Style.css" text="Current Order" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="order" layoutX="19.0" layoutY="47.0" AnchorPane.bottomAnchor="88.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="50.0">
+        <columns>
+          <TableColumn fx:id="orderProduct" prefWidth="200.0" text="Product" />
+            <TableColumn fx:id="orderCategory" prefWidth="147.0" text="Category" />
+          <TableColumn fx:id="orderPrice" text="Price" />
+            <TableColumn fx:id="orderQuantity" text="Quantity" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <Button fx:id="deleteOrder" mnemonicParsing="false" onAction="#handleDelete" text="Delete Item" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="31.0" layoutY="266.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
+         <children>
+            <Label fx:id="basketError" textFill="RED">
+               <HBox.margin>
+                  <Insets right="150.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="cancelOrder" layoutX="24.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="30.0" prefWidth="79.0" text="Cancel" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="sendOrder" layoutX="213.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleSend" prefHeight="30.0" text="Send Order" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <GridPane layoutX="550.0" layoutY="200.0" vgap="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="116.0" />
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="84.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Total Order: " />
+            <Label fx:id="totalPrice" text="£0.00" textFill="RED" GridPane.columnIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label id="shippingFee" contentDisplay="CENTER" prefHeight="16.0" prefWidth="98.0" text="Shipping Fee:" GridPane.rowIndex="1" />
+            <Label fx:id="shippingFee" prefHeight="20.0" text="£0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Total: " GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalOrder" text="£0.00" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="notifyFee" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="200.0" text="free for orders above £20" textFill="#a4916a" GridPane.columnSpan="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
